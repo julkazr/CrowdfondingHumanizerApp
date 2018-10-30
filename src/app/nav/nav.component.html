@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom border-success">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img src="assets/logo.svg" width="150" alt="Humanizer">
+    </a>
+    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['/']" [translate]="'nav.home'"></a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="'active'">
+          <a class="nav-link" [routerLink]="['/events']" [translate]="'nav.events'"></a>
+        </li>
+        <li *ngIf="user && isAdmin | async" class="nav-item" [routerLinkActive]="'active'">
+          <a class="nav-link" [routerLink]="['/community-account']" [translate]="'nav.communityAccount'"></a>
+        </li>
+      </ul>
+
+      <div *ngIf="!(signedIn | async)" class="btn-group">
+        <button class="btn btn-outline-success" [translate]="'nav.signIn'" [routerLink]="['/sign-in']"></button>
+        <button class="btn btn-success" [translate]="'nav.makeEvent'" [routerLink]="['/sign-up']"></button>
+      </div>
+      <div *ngIf="signedIn | async" class="btn-group">
+        <button class="btn btn-success" [translate]="'nav.makeEvent'" [routerLink]="['/create-event']"></button>
+        <button class="btn btn-outline-success dropdown-toggle dropdown-toggle-split d-flex align-items-center" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <div class="rounded-circle mr-2" style="width: 30px; height: 30px">
+            <img src="{{ user?.photoURL }}" class="rounded-circle" style="height: 100%">
+          </div>
+          <span class="mr-2">{{ user?.displayName | firstName }}</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" [routerLink]="['/user']"><fa [name]="'user'"></fa> {{'nav.profile' | translate}}</a>
+          <a class="dropdown-item" [routerLink]="['/edit-user']"><fa [name]="'cog'"></fa> {{'nav.settings' | translate}}</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="signOut()" [routerLink]="['/home']"><fa [name]="'sign-out'"></fa> {{'nav.signOut'
+            | translate}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

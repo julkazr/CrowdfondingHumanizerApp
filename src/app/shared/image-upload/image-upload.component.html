@@ -1,0 +1,20 @@
+<div class="form-group">
+  <div class="d-flex justify-content-center mb-2" [class.hiding]="!data.image && !outputFile && !imageUrl">
+    <img-cropper #cropper [image]="data" [settings]="cropperSettings" class="d-block" [class.hiding]="!data.image"></img-cropper>
+    <img [src]="data.image || imageUrl" [width]="cropperSettings.canvasWidth" [height]="cropperSettings.canvasHeight" [class.rounded-circle]="rounded">
+  </div>
+  <div *ngIf="percent && !done" class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" [style.width.%]="percent"
+      [attr.aria-valuenow]="percent" aria-valuemin="0" aria-valuemax="100">{{ percent | percent }}</div>
+  </div>
+  <label [class.hiding]="data.image && !outputFile" for="image" class="d-flex justify-content-center align-items-center border border-success rounded"
+    style="height: 100px">
+    <!-- <img *ngIf="imageUrl" #imagePreview [src]="imageUrl" class="rounded w-100"> -->
+    <span class="text-success text-center">{{ "imgUpload.browser" | translate}}<br><small [translate]="'imgUpload.droper'"></small></span>
+    <input type="file" accept="image/png, image/jpeg" name="image" id="image" (change)="onFileSelected($event)">
+  </label>
+  <div class="btn-group d-flex justify-content-center" [class.hiding]="!data.image">
+    <button *ngIf="data.image" class="btn btn-success" (click)="save()" [translate]="'imgUpload.save'"></button>
+    <button class="btn btn-default" (click)="cancel()" [translate]="'imgUpload.cancel'"></button>
+  </div>
+</div>

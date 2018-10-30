@@ -1,0 +1,65 @@
+<div class="container border rounded my-5 py-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-cent" [translate]="'createEvent.headTitle'"></h1>
+      <form #createEventForm="ngForm">
+        <!-- Title -->
+        <div class="form-group">
+          <label for="title" [translate]="'createEvent.title'"></label>
+          <input type="text" class="form-control" id="title" name="title" [(ngModel)]="event.title" minlength="3" placeholder="{{ 'createEvent.titlePlaceholder' | translate }}"
+            required appIsInvalid #title="ngModel">
+          <div *ngIf="title.errors" class="invalid-feedback">
+            <span *ngIf="title.errors['required']" [translate]="'createEvent.titleError'"></span>
+          </div>
+        </div>
+        <!-- End date -->
+        <div class="form-group">
+          <label for="endDate">{{ "createEvent.duration" | translate}} {{ duration }} {{ pluralMapping[digit] | translate}}</label>
+          <input type="range" min="1" max="30" class="form-control" id="endDate" name="endDate" [(ngModel)]="duration" (input)="calcCount()"
+            required appIsInvalid #endDate="ngModel">
+          <div *ngIf="endDate.errors" class="invalid-feedback">
+            <span *ngIf="endDate.errors['required']"></span>
+          </div>
+        </div>
+        <!-- Category -->
+        <div class="form-group">
+          <label for="category" [translate]="'createEvent.category'"></label>
+          <select [(ngModel)]="event.categoryID" class="custom-select" id="category" name="category" required appIsInvalid #category="ngModel">
+            <option [ngValue]="undefined" selected disabled [translate]="'createEvent.category'"></option>
+            <option *ngFor="let category of categories" [ngValue]="category.categoryID"> {{ category.categoryName | translate}}
+            </option>
+          </select>
+          <div *ngIf="category.errors" class="invalid-feedback">
+            <span *ngIf="category.errors['required']" [translate]="'createEvent.categoryError'"></span>
+          </div>
+        </div>
+        <!-- Money goal -->
+        <div class="form-group">
+          <label for="moneyGoal" [translate]="'createEvent.moneyGoal'"></label>
+          <input type="text" class="form-control" id="moneyGoal" name="moneyGoal" [(ngModel)]="event.moneyGoal" placeholder="{{  'createEvent.moneyGoal' | translate}}"
+            required appIsInvalid #moneyGoal="ngModel">
+          <div *ngIf="moneyGoal.errors" class="invalid-feedback">
+            <span *ngIf="moneyGoal.errors['required']" [translate]="'createEvent.moneyGoalError'"></span>
+          </div>
+        </div>
+        <!-- Featured -->
+        <div class="form-group">
+          <input type="checkbox" id="featured" name="featured" checked="checked" [(ngModel)]="featured">&nbsp;
+          <label for="featured" [translate]="'createEvent.featured'"></label>
+        </div>
+        <!-- Description -->
+        <div class="form-group">
+          <label for="description" [translate]="'createEvent.description'"></label>
+          <textarea ref-textarea class="form-control" [(ngModel)]="event.description" rows="4" cols="74" id="description" name="description"
+            placeholder="{{'createEvent.descriptionPlaceholder' | translate}}" required appIsInvalid #description="ngModel"></textarea>
+          <div *ngIf="description.errors" class="invalid-feedback">
+            <span *ngIf="description.errors['required']"></span>
+          </div>
+        </div>
+        <!-- Image uppload -->
+        <app-image-upload [cropperSettings]="cropperSettings" [percent]="percent" [done]="done" (uploadImage)="onFileSelected($event)"></app-image-upload>
+        <button class="btn btn-success" type="submit" (click)="onSubmit()" [translate]="'createEvent.submit'"></button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="container my-4">
+  <div class="row">
+    <aside class="col-md-3">
+      <p class="h4" [translate]="'events.categoryTitle'"></p>
+      <form #filterForm="ngForm" class="list-group">
+        <label *ngFor="let category of categories; index as i" class="list-group-item" [ngClass]="{'bg-success text-white': categories[i].useFilter}">
+          <input type="checkbox" [name]="category.categoryID" [(ngModel)]="categories[i].useFilter">
+          <fa [name]="category.iconName"></fa>
+          <span class="ml-2" [translate]="category.categoryName"></span>
+        </label>
+      </form>
+    </aside>
+
+    <div class="col-md-9">
+      <div class="row">
+        <div class="inline-form mx-2 d-flex flex-wrap flex-lg-nowrap justify-content-start justify-content-lg-between">
+
+          <div class="input-group mr-2 mb-2">
+            <div class="input-group-prepend">
+              <label class="input-group-text text-success border-success bg-white" [translate]="'events.labelSort'"></label>
+            </div>
+            <select name="sortBy" [(ngModel)]="sortBy" class="custom-select border-success">
+              <option [value]="'startDate'" [translate]="'events.optionDate'"></option>
+              <option [value]="'percentCollected'" [translate]="'events.optionPercent'"></option>
+            </select>
+          </div>
+
+
+          <div class="input-group mr-2 mb-2">
+            <div class="input-group-prepend">
+              <label class="input-group-text text-success border-success bg-white" [translate]="'events.labelFilter'"></label>
+            </div>
+            <select name="filterByState" [(ngModel)]="filterByState" class="custom-select border-success">
+              <option [value]="''" [translate]="'events.allState'" selected></option>
+              <option [value]="'created'" [translate]="'events.created'"></option>
+              <option [value]="'invalid'" [translate]="'events.invalid'"></option>
+              <option [value]="'active'" [translate]="'events.active'"></option>
+              <option [value]="'successful'" [translate]="'events.successful'"></option>
+              <option [value]="'unsuccessful'" [translate]="'events.unsuccessful'"></option>
+              <option [value]="'archived'" [translate]="'events.archived'"></option>
+            </select>
+          </div>
+
+
+          <button class="btn btn-outline-success mr-1 mb-2" (click)="toggleAscending()">
+            <span *ngIf="ascending"><fa class="ml-1" [name]="'sort-asc'"></fa>{{ 'events.ascending' | translate }}</span>
+            <span *ngIf="!ascending"><fa class="ml-1" [name]="'sort-desc'"></fa>{{ 'events.descending' | translate }}
+            </span>
+          </button>
+
+          <button class="btn btn-success mb-2" (click)="onlyCurrentFunc()">
+            <span>
+              <fa *ngIf="onlyCurrent" class="ml-1" [name]="'square-o'"></fa>
+              <fa *ngIf="!onlyCurrent" class="ml-1" [name]="'check-square-o'"></fa>
+              {{ 'events.expired' | translate }}
+            </span>
+          </button>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <app-event-card *ngFor="let event of eventsList | async | sortAndFilter:onlyCurrent:categories:sortBy:ascending:filterByState | paginate: {itemsPerPage: 6, currentPage: p }"
+          class="col-md-4 my-2" [event]="event" (openEvent)="openEvent($event)"></app-event-card>
+      </div>
+      <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+      <pagination-template #pagination="paginationApi" (pageChange)="p = $event">
+        <ul class="pagination mt-2 justify-content-center">
+          <li class="page-item" [class.disabled]="pagination.isFirstPage()">
+            <a class="page-link" (click)="pagination.previous()" [translate]="'events.paginPrev'"></a>
+          </li>
+          <li *ngFor="let page of pagination.pages" class="page-item" [class.active]="pagination.getCurrent() === page.value">
+            <a class="page-link" (click)="pagination.setCurrent(page.value)">
+              {{page.label}}
+            </a>
+          </li>
+          <li class="page-item" [class.disabled]="pagination.isLastPage()">
+            <a class="page-link" (click)="pagination.next()" [translate]="'events.paginNext'"></a>
+          </li>
+        </ul>
+      </pagination-template>
+    </div>
+  </div>
+</div>

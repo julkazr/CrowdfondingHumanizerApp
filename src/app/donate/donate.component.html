@@ -1,0 +1,20 @@
+<div class="container border rounded my-5 py-5">
+  <div class="row">
+    <div class="col-md-6  offset-md-3">
+      <div class="container-fluid text-center">
+        <!-- Event title -->
+        <h1>{{ event?.title }}</h1>
+      </div>
+      <form #createDonateForm="ngForm">
+        <!-- The amount of donation -->
+        <div class="form-group">
+          <label for="donate" [translate]="'donate.label'"></label>
+          <input type="number" min="1" class="form-control" id="donate" name="donate" [(ngModel)]="donation.donationAmount" title="donate"
+            placeholder="{{'donate.amountPlaceholder' | translate}}" appIsInvalid required #donate="ngModel">
+          <small class="text-danger" [class.d-none]="donate.valid || donate.untouched" [translate]="'donate.small'"></small>
+        </div>
+        <button [disabled]="createDonateForm.form.invalid" class="btn btn-primary" type="submit" (click)="onSubmit()" [translate]="'donate.submit'"></button>
+      </form>
+    </div>
+  </div>
+</div>

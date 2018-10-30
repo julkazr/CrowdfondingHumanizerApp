@@ -1,0 +1,95 @@
+<div class="container border rounded my-5 py-5">
+  <h1 class="text-center" [translate]="'editUser.title'"></h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form #profileInfo="ngForm" class="border-bottom">
+        <legend [translate]="'editUser.profileInfo'"></legend>
+        <app-image-upload [cropperSettings]="cropperSettings" [imageUrl]="imageURL" [rounded]="true" [percent]="percent" [done]="done"
+          (uploadImage)="onFileSelected($event)"></app-image-upload>
+        <div class="form-group">
+          <!-- Name -->
+          <label for="name" [translate]="'editUser.nameLabel'"></label>
+          <input type="text" class="form-control" id="name" [ngModel]="user?.displayName" (ngModelChange)="userProfileName = $event"
+            name="name" min-length="3" #name="ngModel" appIsInvalid required>
+          <div *ngIf="name.errors" class="invalid-feedback">
+            <span *ngIf="name.errors['name'] || name.errors['required']" [translate]="'editUser.nameError'"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dateOfBirth" [translate]="'editUser.dateOfBirth'"></label>
+          <input type="date" id="dateOfBirth" class="form-control" (ngModelChange)="getDateOfBirth($event)" [ngModel]="userData?.dateOfBirth"
+          #dateOfBirth="ngModel" name="dateOfBirth">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-lg btn-block btn-success" (click)="updateProfile()" [translate]="'editUser.updateProfile'"></button>
+        </div>
+      </form>
+      <div class="form-check">
+        <label class="toggle-switch" for="isNewsletterFieldChecked">
+          <p [translate]="'editUser.newsletter'"></p>
+          <input type="checkbox" name="isNewsletterFieldChecked" id="isNewsletterFieldChecked" (ngModelChange)="newsletterSubscription($event)"
+            [ngModel]="userData?.isNewsletterFieldChecked" #isNewsletterFieldChecked="ngModel">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-6 border-left">
+      <form #accountInfo="ngForm">
+        <legend [translate]="'editUser.accountInfo'"></legend>
+        <div class="form-group">
+          <label for="password" [translate]="'editUser.currentPass'"></label>
+          <input type="password" id="password" class="form-control" [(ngModel)]="currentPassword" name="password" #password="ngModel"
+            appIsInvalid required>
+          <div *ngIf="password.errors" class="invalid-feedback">
+            <span *ngIf="password.errors['password'] || password.errors['required']" [translate]="'editUser.newPassError1'"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <!-- Email -->
+          <label for="email" [translate]="'editUser.emailLabel'"></label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="newEmail" name="email" #email="ngModel" appIsInvalid email
+            #email="ngModel">
+          <div *ngIf="email.errors" class="invalid-feedback">
+            <span *ngIf="email.errors['email'] || email.errors['required']" [translate]="'editUser.emailError'"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-lg btn-block btn-default" data-toggle="collapse" data-target="#changePass" aria-expanded="false" aria-controls="changePass"
+            [translate]="'editUser.changePassword'"></button>
+        </div>
+
+        <div id="changePass" class="collapse">
+          <!-- Change password -->
+          <div class="form-group">
+            <label for="newPass1" [translate]="'editUser.newPass1'"></label>
+            <input type="password" id="newPass1" class="form-control" [(ngModel)]="newPassword" name="newPass1" min-length="6" #newPass1="ngModel"
+              [appEqualStrings]="newPass2" [isReverseField]="true" appIsInvalid>
+            <div *ngIf="newPass1.errors" class="invalid-feedback">
+              <span *ngIf="newPass1.errors['newPass1'] || newPass1.errors['required']" [translate]="'editUser.newPassError1'"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="newPass2" [translate]="'editUser.newPass2'"></label>
+            <input type="password" id="newPass2" class="form-control" ngModel name="newPass2" min-length="6" #newPass2="ngModel" [appEqualStrings]="newPass1"
+              appIsInvalid>
+            <div *ngIf="newPass2.errors" class="invalid-feedback">
+              <span *ngIf="newPass2.errors['newPass2'] || newPass2.errors['required']" [translate]="'editUser.newPassError2'"></span>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-lg btn-block btn-success" (click)="updateAccount()" [translate]="'editUser.updateAccount'"></button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Toggle switch -->
+<!-- <label class="toggle-switch" for="subscriptionStatus">
+  <span>Label text</span>
+  <input type="checkbox" name="subscriptionStatus" id="subscriptionStatus" ngModel #subscriptionStatus="ngModel">
+  <span class="slider round"></span>
+</label> -->

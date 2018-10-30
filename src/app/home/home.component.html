@@ -1,0 +1,31 @@
+<!-- Slider -->
+<div id="featuredEventsCarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item" *ngFor="let slide of slides; index as i" [class.active]="i === 0">
+      <div class="d-block w-100" [ngStyle]="{'background-image': 'url(' + ( slide.imgURL | async ) + ')',  'background-position': 'center center', 'background-repeat': 'no-repeat', 'background-size': 'cover', 'height': '400px'}"></div>
+      <div class="carousel-caption d-md-block">
+        <h1 class="display-3">{{ slide.title }}</h1>
+        <p>{{ slide.description | slice:0:40 }}...</p>
+        <button class="btn btn-lg btn-success" (click)="seeMore(slide.id)" [translate]="'home.helpOut'"></button>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#featuredEventsCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#featuredEventsCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <!-- End of slider -->
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-6 text-center">
+        <span class="h4">{{"home.hosting" | translate}} <strong>{{ eventCount }}</strong> {{"home.events" | translate}}</span>
+      </div>
+      <div class="col-6 text-center">
+        <span class="h4"><strong>{{ totalmoneyCollecteded | currency:'EUR' }}</strong> {{"home.total" | translate}}</span>
+      </div>
+    </div>
+  </div>

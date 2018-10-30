@@ -1,0 +1,23 @@
+<footer class="bg-dark text-white-50 py-4">
+  <div class="container">
+    <nav class="nav flex-column">
+      <a href="" class="nav-link text-white-50">Lorem</a>
+      <a href="" class="nav-link text-white-50">Ipsum</a>
+      <a href="" class="nav-link text-white-50">Doloe</a>
+      <a href="" class="nav-link text-white-50">Sit</a>
+      <a href="" class="nav-link text-white-50">Amet</a>
+    </nav>
+    <div class="d-flex justify-content-between align-items-center mt-4">
+      <div class="dropup">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <fa [name]="'globe'"></fa>
+          <span class="ml-2" [translate]="'footer.languageSelect'"></span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" (click)="useLanguage('en')">English</a>
+          <a class="dropdown-item" (click)="useLanguage('sr')">Srpski</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

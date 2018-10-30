@@ -1,0 +1,40 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-start align-items-center">
+      <img [src]="user?.photoURL" [alt]="user?.displayName" class="rounded-circle mr-2" height="100" widh="100">
+      <span class="h3">{{ user?.displayName }}</span>
+      <span class="h2 flex-fill text-center text-success">{{ "user.totalDonat" | translate}}<strong>{{ totalDonations | async | currency:'EUR'
+          }}
+        </strong></span>
+    </div>
+  </div>
+  <div class="row border rounded mt-3 py-3">
+    <div class="col-md-6">
+      <div class="list-group-flush">
+        <a *ngFor="let donation of userDonations | async | keyvalue" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+          [routerLink]="['/event', donation.key]">
+          <div>
+            <strong class="mr-1">{{ donation.key | eventTitle | async }}
+            </strong>
+            <app-status-badge [eventStatus]="donation.key | eventStatus | async"></app-status-badge>
+          </div>
+          <div>{{ "user.donated" | translate}}{{ donation.value | currency:'EUR' }}
+            <app-badge [donation]="donation.value"></app-badge>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-6 border-left">
+      <div class="list-group-flush">
+        <a *ngFor="let event of userEvents | async" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+          [routerLink]="['/event', event.id]">
+          <div>
+            <strong class="mr-1">{{ event.title }}</strong>
+            <app-status-badge [eventStatus]="event.state"></app-status-badge>
+          </div>
+          <span>{{ event.moneyCollected | currency:'EUR' }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

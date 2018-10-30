@@ -1,0 +1,54 @@
+<div *ngIf="event" class="container border-left border-right">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center text-uppercase">
+        {{ event.title }}
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-9">
+      <!-- <img [src]="( imageURL | async )" alt="Event Image" class="mx-auto mb-4 d-block" height="300" width="500"> -->
+      <div class="mx-auto mb-4 d-block" [ngStyle]="{'background-image': 'url(' + ( imageURL | async ) + ')', 'background-position': 'center center', 'background-repeat': 'no-repeat', 'background-size': 'contain', 'height': '300px'}"></div>
+      <p>{{ event.description }}</p>
+    </div>
+    <div class="col-lg-3">
+      <div class="d-flex justify-content-between">
+        <div class="text-center">
+          <span class="h2">{{ event.moneyCollected | currency:'EUR' }}</span>
+          <br>
+          <span class="text-uppercase" [translate]="'event.raised'"></span>
+        </div>
+        <div class="text-center">
+          <span class="h2">{{ donor | async }}</span>
+          <br>
+          <span class="text-uppercase" [translate]="'event.donors'"></span>
+        </div>
+      </div>
+      <div class="text-center">
+        <span class="h1">{{ event.moneyGoal | currency:'EUR' }}</span>
+        <br>
+        <span class="text-uppercase" [translate]="'event.goal'"></span>
+      </div>
+      <div class="progress">
+        <div [appProgressBar]="event.percentCollected" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        </div>
+      </div>
+      <p class="text-right text-uppercase" [translate]="'event.daysLeft'">
+        <span *ngIf="daysLeft === 0" [translate]="'event.timeEnd'"><br></span>
+        <strong>{{ daysLeft }}</strong> &nbsp;
+      </p>
+      <button class="btn btn-lg btn-block btn-success font-weight-bold text-uppercase" (click)="onSelect(event.id)" [translate]="'eventCard.helpOut'"></button>
+      <div class="btn-group d-flex mt-2 pb-2">
+        <button class="btn btn-default flex-fill text-white" style="background-color: #3b5998" shareButton="facebook"><fa
+            [name]="'facebook'"></fa></button>
+        <button class="btn btn-default flex-fill text-white" style="background-color: #1da1f2" shareButton="twitter"><fa
+            [name]="'twitter'"></fa></button>
+        <button class="btn btn-default flex-fill text-white" style="background-color: #ff4500" [title]="event.title + ' on Humanizer, please consider helping out'"
+          shareButton="reddit"><fa [name]="'reddit-alien'"></fa></button>
+        <button class="btn btn-default flex-fill text-white" style="background-color: #aaa" [title]="event.title + ' on Humanizer, please consider helping out'"
+          shareButton="email"><fa [name]="'envelope'"></fa></button>
+      </div>
+    </div>
+  </div>
+</div>

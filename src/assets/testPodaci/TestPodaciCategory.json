@@ -1,0 +1,18 @@
+{
+	{
+		"id": "1";
+		"name": "conference";
+	},
+	{
+		"id": "2";
+		"name": "meeting";
+	},
+	{
+		"id": "3";
+		"name": "workshop"
+	},
+	{
+		"id": "4";
+		"name": "trainings"
+	}
+}

@@ -1,0 +1,64 @@
+<div class="container border rounded my-5 py-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 [translate]="'signup.title'"></h1>
+      <form #signupForm="ngForm">
+        <!-- Name -->
+        <div class="form-group">
+          <label for="name" [translate]="'signup.name'"></label>
+          <input type="text" class="form-control" id="name"
+          [(ngModel)]="user.name" name="name" minlength="3"
+          placeholder="{{ 'signup.namePlaceholder' |translate }}"
+          #name="ngModel" appIsInvalid required>
+          <div *ngIf="name.errors" class="invalid-feedback">
+            <span *ngIf="name.errors['name'] || name.errors['required']" [translate]="'signup.nameErrorMessage'"></span>
+          </div>
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email" [translate]="'signup.email'"></label>
+          <input type="email" class="form-control" id="email"
+          [(ngModel)]="user.email" name="email"
+          email #email="ngModel" appIsInvalid required>
+          <div *ngIf="email.errors" class="invalid-feedback">
+            <span *ngIf="email.errors['email'] || email.errors['required']" [translate]="'signup.emailErrorMessage'"></span>
+          </div>
+        </div>
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password" [translate]="'signup.password'"></label>
+          <input type="password" class="form-control" id="password"
+          [(ngModel)]="user.password" name="password" minlength="6" [appEqualStrings]="confirmPassword" [isReverseField]="true"
+          #password="ngModel" appIsInvalid required>
+          <div *ngIf="password.errors" class="invalid-feedback">
+            <span *ngIf="password.errors['password'] || password.errors['required']" [translate]="'signup.passwordErrorMessage'"></span>
+          </div>
+        </div>
+        <!-- Confirm password -->
+        <div class="form-group">
+          <label for="confirmPassword" [translate]="'signup.confirmPassword'"></label>
+          <input type="password" class="form-control" id="confirmPassword"
+          ngModel name="confirmPassword" [appEqualStrings]="password"
+          placeholder="{{ 'signup.confirmPasswordPlaceholder' |translate }}"
+           #confirmPassword="ngModel" appIsInvalid required>
+           <div *ngIf="confirmPassword.invalid" class="invalid-feedback">
+            <span *ngIf="confirmPassword.invalid" [translate]="'signup.confirmPassErrorMessage'"></span>
+          </div>
+        </div>
+        <!-- Accept terms & conditions -->
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="acceptTerms"
+          ngModel #acceptTerms="ngModel" appIsInvalid required>
+          <label for="acceptTerms" class="form-check-label" [translate]="'signup.terms'"></label>
+          <div *ngIf="acceptTerms.errors" class="invalid-feeddback">
+            <span *ngIf="acceptTerms.errors['required']" [translate]="'signup.termsNotAccepted'"></span>
+          </div>
+        </div>
+        <!-- Submit -->
+        <button (click)="onSubmit()" class="btn btn-lg btn-block btn-success" type="submit" [disabled]="signupForm.invalid" [translate]="'signup.submit'"></button>
+        <!-- Sign In with Google -->
+        <button class="btn btn-lg btn-block btn-primary" (click)="googleSignup()" [translate]="'signup.googleSignup'"></button>
+      </form>
+    </div>
+  </div>
+</div>

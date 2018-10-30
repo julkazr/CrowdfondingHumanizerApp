@@ -1,0 +1,12 @@
+<div class="card">
+  <!-- <img [src]="( imageURL | async )" alt="Event Image" alt="" class="card-img-top" height="100"> -->
+  <div class="card-img-top" [ngStyle]="{'background-image': 'url(' + ( imageURL | async ) + ')', 'background-position': 'center center', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'height': '150px'}"></div>
+  <div class="card-body">
+    <h3 class="card-title">{{ event.moneyGoal | currency:'EUR' }}</h3>
+    <div class="progress">
+      <div [appProgressBar]="event.percentCollected" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <p class="card-text">{{ event.title }}</p>
+    <button (click)="onSelect(event.id)" class="btn btn-success btn-block" [translate]="'eventCard.helpOut'"></button>
+  </div>
+</div>

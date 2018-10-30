@@ -1,0 +1,26 @@
+.list-group-item {
+  border-left: 0;
+  border-right: 0;
+  cursor: pointer;
+}
+
+.list-group-item > input[type='checkbox'] {
+  position: fixed;
+  z-index: -10;
+  opacity: 0;
+  left: 0;
+  top: 0;
+}
+
+.pagination > li > a {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.pagination > li:not(.disabled) > a {
+  color: #28a745;
+}
+
+.pagination > li.active > a {
+  background: #218838;
+  color: #fff;
+}

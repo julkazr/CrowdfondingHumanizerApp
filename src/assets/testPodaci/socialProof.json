@@ -1,0 +1,11 @@
+	{
+		"id": "1",
+		"title": "Social Proof",
+    		"description": "Techweek curates exciting programming that allows a global spotlight to shine on each ecosystem and its leaders. Past speakers include Rahm Emanuel, Travis Kalanick (CEO, Uber), Craig Newmark (Founder, Craigslist), Barney Harford (CEO, Orbitz), and Chuck Templeton (Founder, OpenTable). The Techweek expo has gathered more than 200 sponsors, including companies such as Google, Groupon, Microsoft, Motorola, Redbox, Uber, and Wordpress.",
+    		"startDate": "2018-08-04 08:00:00",
+    		"endDate": "2018-09-01 20:00:00",
+    		"state": "1",
+    		"moneyGoal": "1000",
+    		"moneyCollected": "125",
+    		"categoryID": "3"
+	}

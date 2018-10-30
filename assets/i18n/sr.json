@@ -1,0 +1,176 @@
+{
+  "categories": {
+    "emergency": "Hitna medicinska pomoć",
+    "healthcare": "Zdravlje",
+    "social": "Društvo",
+    "sport": "Sport",
+    "art": "Umetnost",
+    "environment": "Životna sredina",
+    "other": "Ostalo"
+  },
+  "community": {
+    "amount": "Svota",
+    "date": "Datum",
+    "totalFunds": "Trenutna sredstva u HCA fondu ",
+    "updateStatus": "Ažuriraj status svake akcije",
+    "distributeFunds": "Raspodeli HCA sredstva",
+    "transfered": "Sredstva prebačena iz neuspešnih akcija ",
+    "transferedFrom": "Prebačeno sa",
+    "transferedTo": "Sredstva prebačena akcijama",
+    "donatedTo": " donirano akciji "
+  },
+  "createEvent": {
+    "category": "Kategorija",
+    "categoryError": "Obavezno je izabrati kategoriju.",
+    "description": "Opis",
+    "descriptionPlaceholder": "Opiši svoju akciju...",
+    "duration": "Trajanje: ",
+    "featured": "Izdvojeno",
+    "headTitle": "Pokreni akciju",
+    "moneyGoal": "Potrebna novčana sredstva",
+    "moneyGoalError": "Ovo polje je obavezno.",
+    "submit": "Započni akciju",
+    "title": "Naslov",
+    "titleError": "Naslov je obavezan.",
+    "titlePlaceholder": "Naslov akcije",
+    "week": " nedelja",
+    "week1": "nedelja",
+    "week2": "nedelje",
+    "weeks": "nedelja"
+  },
+  "donate": {
+    "amountPlaceholder": "Suma koja se uplaćuje",
+    "label": "Donacija: ",
+    "small": "Unos sume koja se uplaćuje je obavezan.",
+    "submit": "Doniranje"
+  },
+  "editUser": {
+    "accountInfo": "Podaci o nalogu:",
+    "changePassword": "Promeni lozinku",
+    "currentPass": "Trenutno važeća lozinka",
+    "dateOfBirth": "Datum rođenja",
+    "emailError": "Unesi validnu email adresu.",
+    "emailLabel": "Email",
+    "nameError": "Ime je obavezno i mora da ima bar 3 karaktera.",
+    "nameLabel": "Ime (puno ime i prezime)",
+    "newsletter": "Čekiraj ako želiš da dobijaš novosti.",
+    "newPass1": "Nova lozinka",
+    "newPass2": "Potvrda nove lozinke",
+    "newPassError1": "Lozinka mora da ima najmanje 6 karaktera.",
+    "newPassError2": "Lozinke se ne podudaraju.",
+    "profileInfo": "Podaci o profilu:",
+    "title": "Upravljaj svojim nalogom",
+    "updateAccount": "Ažuriraj nalog",
+    "updateProfile": "Ažuriraj profil"
+  },
+  "emailVerification": {
+    "text": "Poslat ti je email za verifikaciju. Molimo te da proveriš svoje sanduče i da verifikuješ svoju email adresu."
+  },
+  "events": {
+    "ascending": " Rastuće",
+    "categoryTitle": "Kategorije",
+    "descending": " Opadajuće",
+    "labelSort": "Sortiraj po: ",
+    "optionDate": "Datum početka",
+    "optionPercent": "Procenat prikupljenih sredstava",
+    "expired": "Prikaži istekle",
+    "labelFilter": "Filtriraj po:",
+    "created": "Kreirani",
+    "invalid": "Nevažeći",
+    "active": "Aktivni",
+    "paginPrev": "Prethodna",
+    "paginNext": "Sledeća",
+    "successful": "Uspešni",
+    "unsuccessful": "Neuspešni",
+    "archived": "Arhivirani",
+    "allState": "Svi statusi"
+  },
+  "signup": {
+    "confirmPassErrorMessage": "Lozinke nisu identične. Ponovi lozinku.",
+    "confirmPassword": "Potvrda lozinke",
+    "confirmPasswordPlaceholder": "Ponovi svoju lozinku",
+    "emailErrorMessage": "Email je obavezan. Unesi validan email.",
+    "googleSignup": "Kreiraj nalog preko Gugla",
+    "name": "Ime",
+    "nameErrorMessage": "Ime je obavezno i mora da ima najmanje 3 karaktera.",
+    "namePlaceholder": "Ime i prezime, ili ime organizacije",
+    "password": "Lozinka",
+    "passwordErrorMessage": "Lozinka je obavezna i mora da ima najmanje 6 karaktera.",
+    "submit": "Kreiraj nalog",
+    "terms": "Prihvatam sve uslove.",
+    "termsNotAccepted": "Moraš da prihvatiš sve uslove pre kreiranja naloga.",
+    "title": "Kreiranje naloga"
+  },
+  "forgot-password": {
+    "back": "Nazad na prijavu",
+    "button": "Pošalji zahtev",
+    "invalidEmail": "Pogrešna email adresa",
+    "label": "Ukucaj email adresu",
+    "title": "Resetovanje lozinke"
+  },
+  "footer": {
+    "languageSelect": "Izbor jezika"
+  },
+  "home": {
+    "events": " akcija",
+    "hosting": "Trenutno je na raspolaganju ",
+    "total": " je ukupno sakupljeno.",
+    "helpOut": "Podrži akciju"
+  },
+  "imgUpload": {
+    "browser": "Pronađi sliku",
+    "droper": "ili fajlove prevuci i ubaci ovde",
+    "save": "Sačuvaj",
+    "cancel": "Odbaci"
+  },
+  "nav": {
+    "events": "Eventi",
+    "home": "Početna",
+    "makeEvent": "Pokreni svoju akciju",
+    "profile": "Profil",
+    "settings": "Podešavanja",
+    "signIn": "Prijavi se",
+    "signOut": "Odjavi se",
+    "communityAccount": "Zajednički Račun"
+  },
+  "reset-password": {
+    "button": "Resetuj lozinku",
+    "confirmLabel": "Potvrdi novu lozinku",
+    "confirmNotEqual": "Lozinke se ne podudaraju",
+    "confirmRequired": "Mora da se popuni polje za potvrdu",
+    "label": "Nova lozinka",
+    "minLength": "Nova lozinka je prekratka",
+    "required": "Obavezno je da se popuni ovo polje",
+    "title": "Ukucaj novu lozinku"
+  },
+  "signIn": {
+    "rememberMe": "Zapamti me",
+    "signIn": "Prijavi se",
+    "signUp": "Nisi član? Registruj se.",
+    "forgotPassword": "Zaboravio si lozinku?",
+    "email": "Email adresa",
+    "password": "Lozinka"
+  },
+  "signin": {
+    "googleSignin": "Prijavi se pomoću Gugla"
+  },
+  "eventCard": {
+    "helpOut": "Pomoć"
+  },
+  "event": {
+    "shareOnSns": "Društvene mreže",
+    "raised": "sakupljeno",
+    "donors": "donatori",
+    "goal": "cilj",
+    "daysLeft": " dana je ostalo",
+    "timeEnd": "Ovaj događaj je završen"
+  },
+  "thanks": {
+    "thanks": "Hvala",
+    "back": "Nazad na događaj"
+  },
+  "user": {
+    "totalDonat": "Ukupno donirano ",
+    "donated": "Donirano "
+  }
+}

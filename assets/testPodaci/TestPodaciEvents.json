@@ -1,0 +1,46 @@
+{
+	{
+		"id": "1";
+		"title": "Social Proof";
+    		"description": "Techweek curates exciting programming that allows a global spotlight to shine on each ecosystem and its leaders. Past speakers include Rahm Emanuel, Travis Kalanick (CEO, Uber), Craig Newmark (Founder, Craigslist), Barney Harford (CEO, Orbitz), and Chuck Templeton (Founder, OpenTable). The Techweek expo has gathered more than 200 sponsors, including companies such as Google, Groupon, Microsoft, Motorola, Redbox, Uber, and Wordpress.";
+    		"startDate": "2018-08-04 08:00:00";
+    		"endDate": "2018-09-01 20:00:00";
+    		"state": "1";
+    		"moneyGoal": "1000";
+    		"moneyCollected": "125";
+    		"categoryID": "3";
+	},
+	{
+		"id": "2";
+		"title": "Incentives";
+    		"description": "The next outstanding show is Monday March 23rd at 8pm. The Comedy Cabaret offers a Laffy Raffy Raffle. To enter all you have to do is RSVP/Join this event, and then on the night of show, be present in the flesh and your name will be entered into a draw for free beer! (DISCLAIMER: If you�re not there when we draw your name you forfeit your mouth-watering super-thirst quenching beer. Also must 19 years of age or older to enter).";
+    		"startDate": "2018-08-10 08:00:00";
+    		"endDate": "2018-09-05 20:00:00";
+    		"state": "1";
+    		"moneyGoal": "5000";
+    		"moneyCollected": "2125";
+    		"categoryID": "1";
+	},
+	{
+		"id": "3";
+		"title": Charity
+    		"description": "Fundraising proceeds will directly support Reel Asian�s year-round and festival youth programs that help culturally diverse and newcomer youth from the GTA examine issues of identity and belonging through media arts, while providing leadership opportunities, education and job-skills training in film and creative production.";
+    		"startDate": "2018-08-11 08:00:00";
+    		"endDate": "2018-09-10 20:00:00";
+    		"state": "3";
+    		"moneyGoal": "10000";
+    		"moneyCollected": "2125";
+    		"categoryID": "2";
+	},
+	{
+		"id": "4";
+		"title": Urgency & FOMO
+    		"description": "Big Sean will at the hmv Underground at 333 Yonge Street on March 24, 2015 at 5:00 PM for an exclusive FAN MEET & GREET. Space is limited to the first 300 fans on a first come first served basis (as per the event protocol)";
+    		"startDate": "2018-08-01 08:00:00";
+    		"endDate": "2018-08-10 20:00:00";
+    		"state": "4";
+    		"moneyGoal": "2000";
+    		"moneyCollected": "2125";
+    		"categoryID": "1";
+	}
+}

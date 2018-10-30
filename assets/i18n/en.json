@@ -1,0 +1,177 @@
+{
+  "categories": {
+    "emergency": "Medical emergency",
+    "healthcare": "Healthcare",
+    "social": "Social",
+    "sport": "Sport",
+    "art": "Art",
+    "environment": "Environment",
+    "other": "Other"
+  },
+  "community": {
+    "amount": "Amount",
+    "date": "Date",
+    "totalFunds": "Current funds in HCA ",
+    "updateStatus": "Update every event status",
+    "distributeFunds": "Distribute HCA funds",
+    "transfered": "Funds transfered from unsuccessful events ",
+    "transferedFrom": "Transfered from",
+    "transferedTo": "Funds transfered to medical events ",
+    "donatedTo": " donated to "
+  },
+  "createEvent": {
+    "category": "Category",
+    "categoryError": "Category is required.",
+    "description": "Description",
+    "descriptionPlaceholder": "Describe your event...",
+    "duration": "Duration: ",
+    "featured": "Featured",
+    "headTitle": "Create event",
+    "moneyGoal": "Money goal",
+    "moneyGoalError": "Money goal is required.",
+    "submit": "Submit form",
+    "title": "Title",
+    "titleError": "Title is required.",
+    "titlePlaceholder": "Event title",
+    "week": "week",
+    "week1": "week",
+    "week2": "weeks",
+    "weeks": "weeks"
+  },
+  "donate": {
+    "amountPlaceholder": "The amount of donation",
+    "label": "Donation amount: ",
+    "small": "The amount of donation is required.",
+    "submit": "Donate now"
+  },
+  "editUser": {
+    "accountInfo": "Account info:",
+    "changePassword": "Change password",
+    "currentPass": "Current password",
+    "dateOfBirth": "Date of birth",
+    "emailError": "Enter valid email address.",
+    "emailLabel": "Email",
+    "nameError": "Name is required and must have minimum 3 chaaracters.",
+    "nameLabel": "Name (full name)",
+    "newPass1": "New password",
+    "newPass2": "Confirm new password",
+    "newPassError1": "Password must have minimum 6 characters",
+    "newPassError2": "Passwords don't match.",
+    "newsletter": "Check this if you want to recieve newsletters.",
+    "profileInfo": "Profile info:",
+    "title": "Manage your account",
+    "updateAccount": "Update your account",
+    "updateProfile": "Update your profile"
+  },
+  "emailVerification": {
+    "text": "Verification email sent. Please, check your email and verify."
+  },
+  "event": {
+    "daysLeft": " days left",
+    "donors": "donors",
+    "goal": "goal",
+    "raised": "raised",
+    "timeEnd": "Sorry, this event has ended",
+    "shareOnSns": "Social networks"
+  },
+  "eventCard": {
+    "helpOut": "Help out"
+  },
+  "events": {
+    "ascending": " Ascending",
+    "categoryTitle": "Categories",
+    "descending": " Descending",
+    "expired": "Show expired",
+    "labelSort": "Sort by: ",
+    "optionDate": "Start date",
+    "optionPercent": "Percent completed",
+    "labelFilter": "Filter by:",
+    "created": "Created",
+    "invalid": "Invalid",
+    "active": "Active",
+    "paginPrev": "Previous",
+    "paginNext": "Next",
+    "successful": "Successful",
+    "unsuccessful": "Unsuccessful",
+    "archived": "Archived",
+    "allState": "All states"
+  },
+  "footer": {
+    "languageSelect": "Language Select"
+  },
+  "forgot-password": {
+    "back": "Back to sign in",
+    "button": "Request link",
+    "invalidEmail": "Invalid email address",
+    "label": "Your email address",
+    "title": "Reset password"
+  },
+  "home": {
+    "events": "events",
+    "hosting": "Currently hosting",
+    "total": "total revenue collected.",
+    "helpOut": "Help out"
+  },
+  "imgUpload": {
+    "browser": "Browse for image",
+    "droper": "or drag and drop files here",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "nav": {
+    "events": "Events",
+    "home": "Home",
+    "makeEvent": "Make Your Event",
+    "profile": "Profile",
+    "settings": "Settings",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "communityAccount": "Community Account"
+  },
+  "reset-password": {
+    "button": "Reset password",
+    "confirmLabel": "Confirm new password",
+    "confirmNotEqual": "Passwords don't match",
+    "confirmRequired": "Must fill in confirmation field",
+    "label": "New password",
+    "minLength": "New password is too short",
+    "required": "Password field is required",
+    "title": "Enter a new password"
+  },
+  "signIn": {
+    "email": "eMail address",
+    "forgotPassword": "Forgot the Password?",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "signIn": "Sign In",
+    "signUp": "Not a member? Sign Up"
+  },
+  "signin": {
+    "googleSignin": "Sign in with Google"
+  },
+  "signup": {
+    "confirmPassErrorMessage": "Passwords are not equal. Repeat your password.",
+    "confirmPassword": "Confirm password",
+    "confirmPasswordPlaceholder": "Repeat your password",
+    "email": "Email",
+    "emailErrorMessage": "Email is required. Enter correct email address.",
+    "googleSignup": "Sign up with Google",
+    "name": "Name",
+    "nameErrorMessage": "Name is required and must have minimum 3 characters.",
+    "namePlaceholder": "Firstname Lastname, or Organization",
+    "password": "Password",
+    "passwordErrorMessage": "Password is required and must have minimum 6 characters.",
+    "submit": "Sign up",
+    "terms": "I accept all terms and conditions.",
+    "termsNotAccepted": "You must accept terms and conditions before register.",
+    "title": "Sign up"
+  },
+  "thanks": {
+    "back": "Back to event",
+    "thanks": "Thank you"
+  },
+  "user": {
+    "totalDonat": "Total donations ",
+    "donated": "Donated "
+  }
+}

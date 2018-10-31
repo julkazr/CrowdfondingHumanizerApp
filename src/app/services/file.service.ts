@@ -47,7 +47,7 @@ export class FileService {
 
   getEventImage(eventId: string): Observable<string> {
     return new Observable(observer => {
-      for (const ext of ['png', 'jpg']) {
+      for (const ext of ['png', 'jpg', 'jpeg']) {
         this._storage
           .ref(`events/${eventId}/image.${ext}`)
           .getDownloadURL()

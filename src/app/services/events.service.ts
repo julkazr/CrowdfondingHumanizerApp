@@ -61,7 +61,8 @@ export class EventsService {
     }
     return this.eventList.push(event).then(promise => {
       this.firebase.object(this.path + promise.key).update({
-        _id: promise.key
+        _id: promise.key,
+        _state: 'active'
         // _startDate: event.startDate.getTime()
       });
       return promise.key;

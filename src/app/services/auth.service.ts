@@ -96,19 +96,19 @@ export class AuthService {
     });
   }
 
-  private verifiedUser(): void {
-    this._userVerified = new Observable(observer => {
-      const sub = this._afAuth.authState.subscribe(firebaseUser => {
-        sub.unsubscribe();
-        if (firebaseUser && firebaseUser.sendEmailVerification) {
-          observer.next(true);
-        } else {
-          observer.next(false);
-          this._location.back();
-        }
-      });
-    });
-  }
+  // private verifiedUser(): void {
+  //   this._userVerified = new Observable(observer => {
+  //     const sub = this._afAuth.authState.subscribe(firebaseUser => {
+  //       sub.unsubscribe();
+  //       if (firebaseUser && firebaseUser.sendEmailVerification) {
+  //         observer.next(true);
+  //       } else {
+  //         observer.next(false);
+  //         this._location.back();
+  //       }
+  //     });
+  //   });
+  // }
 
   public isUserVerified(): Observable<boolean> {
     return this._userVerified;

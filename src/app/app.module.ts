@@ -49,7 +49,7 @@ import { CommunityAccountComponent } from './community-account/community-account
 import { FirstNamePipe } from './pipes/first-name.pipe';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
